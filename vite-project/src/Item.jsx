@@ -3,7 +3,8 @@ import React from "react";
 export default function Item(props) {
     const {title, price, image, itemWebUrl, itemID} = props;
     
-
+    // Item component for SearchResults
+    // When add button clicked, data gets added or removed from localStorage
     function toggleClass() {
         if (Object.keys(localStorage).includes(itemID)) {
             removeFavorite();

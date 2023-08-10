@@ -3,16 +3,12 @@ import React, { useEffect, useState } from "react";
 export default function Item(props) {
     const {title, price, image, itemWebUrl, itemID} = props;
     
-
+    // Removes from localStorage when clicked
     function toggleClass() {
         if (Object.keys(localStorage).includes(itemID)) {
-            removeFavorite();
+            window.localStorage.removeItem(itemID)
         }
     };
-
-    function removeFavorite() {
-        window.localStorage.removeItem(itemID)
-    }
 
     return(
         <div className="column">

@@ -10,6 +10,7 @@ function App() {
   const [page, setPage] = useState("Search");
   const [theme, setTheme] = useState(false);
 
+  // Changes pages on button click
   function changeContact() {
     setPage("Contact");
     setTheme(prevTheme => !prevTheme);
