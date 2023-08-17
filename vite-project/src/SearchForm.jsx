@@ -4,9 +4,10 @@ import dotenv from "dotenv";
 export function SearchForm({callback}) {
 
     const [search, setSearch] = useState("");
-
+    //replace id and secret with own
     var ebayClientID = import.meta.env.VITE_ebayClientID;
     var ebayClientSecret = import.meta.env.VITE_ebayClientSecret;
+
     var authorization = 'Basic ' + btoa(ebayClientID + ':' + ebayClientSecret);
     var ebayAPIEndPoint = `https://api.ebay.com/buy/browse/v1/item_summary/search?q=${search}&auto_correct=KEYWORD`;
     var scope = encodeURI('https://api.ebay.com/oauth/api_scope');
