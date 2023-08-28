@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import dotenv from "dotenv";
 
-export function SearchForm({callback}) {
+export function SearchForm({callback, tab}) {
 
     const [search, setSearch] = useState("");
     //replace id and secret with own
     var ebayClientID = import.meta.env.VITE_ebayClientID;
     var ebayClientSecret = import.meta.env.VITE_ebayClientSecret;
-
     var authorization = 'Basic ' + btoa(ebayClientID + ':' + ebayClientSecret);
     var ebayAPIEndPoint = `https://api.ebay.com/buy/browse/v1/item_summary/search?q=${search}&auto_correct=KEYWORD`;
     var scope = encodeURI('https://api.ebay.com/oauth/api_scope');
@@ -41,7 +40,7 @@ export function SearchForm({callback}) {
 
     return (
     <div className= "search-container">
-        <form className="search-bar" onSubmit={!search ? console.log("Please Search") : apiCall}>
+        <form className="search-bar" onSubmit={apiCall}>
             <input type="text" placeholder="Search" className="search-input" value={search} onChange={(e) => setSearch(e.target.value)} />
             <button type="submit" className="search-button"></button>
         </form>
