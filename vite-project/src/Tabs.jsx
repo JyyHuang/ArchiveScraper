@@ -3,9 +3,11 @@ export function Tabs() {
 
     return (
     <>
-    <div className="ebay-container">
-        eBay
+    <div className="tab-container">
+        <div className="ebay-container">eBay</div>
+        <div className="buyee-container">Buyee</div>
     </div>
     </>
+                
     )
 }
