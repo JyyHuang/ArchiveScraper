@@ -94,22 +94,19 @@
 }
 
 .tab-container {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    list-style: none;
     background: rgba(104, 104, 104, 0.2);
-    font-size: 14px;
-    font-family: "Helvetica";
-    font-weight: 400;
-    cursor: pointer;
-}
-.ebay-container {
-    
-}
-.mercari-container{
+    display: inline-block;
+    position: relative;
 
 }
+
+.tab-container li {
+    display: block;
+    padding: 50px;
+    text-decoration: none;
+}
+
 .items-container{
     width: 350px;
     height: 350px;
