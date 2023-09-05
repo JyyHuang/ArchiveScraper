@@ -37,14 +37,14 @@ export function SearchForm({callback, tab}) {
         }).then(res => res.json()).then(data => callback(data.itemSummaries)).catch(err => console.log(err))
     }
     
-    function scrapeBuyee(event) {
+    function scrapeMercari(event) {
       console.log("This is buyee");
       event.preventDefault();
     }
 
     return (
     <div className= "search-container">
-        <form className="search-bar" onSubmit={eBayApiCall ? tab === "eBay": scrapeBuyee ? tab ==="Buyee": console.log("Nothing")}>
+        <form className="search-bar" onSubmit={eBayApiCall ? tab === "eBay": scrapeBuyee ? tab ==="Mercari": console.log("Nothing")}>
             <input type="text" placeholder="Search" className="search-input" value={search} onChange={(e) => setSearch(e.target.value)} />
             <button type="submit" className="search-button"></button>
         </form>

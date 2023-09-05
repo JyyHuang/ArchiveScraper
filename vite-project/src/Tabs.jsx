@@ -5,7 +5,7 @@ export function Tabs() {
     <>
     <div className="tab-container">
         <div className="ebay-container">eBay</div>
-        <div className="buyee-container">Buyee</div>
+        <div className="buyee-container">Mercari</div>
     </div>
     </>
                 
