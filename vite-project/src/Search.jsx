@@ -4,7 +4,8 @@ import {SearchResults} from "./SearchResults"
 import { useState } from "react"
 
 export function Search() {
-    const [results, setResults] = useState("Please Search")
+  const [results, setResults] = useState("Please Search")
+  
 
   function getTab() {
     
@@ -14,7 +15,7 @@ export function Search() {
       <SearchForm callback={setResults} tab={getTab}/>
 
       <Tabs />
-      <SearchResults results={results}/>
+      <SearchResults results={results} />
     </>
     )
 }

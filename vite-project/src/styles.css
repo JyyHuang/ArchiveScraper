@@ -146,6 +146,7 @@
     left:50%;
     width:100%;
     transform: translateX(-50%);
+    z-index: 1000 !important;
 }
 
 .menu li {
@@ -286,9 +287,16 @@
 }
 
 .homepage{
+    position:relative;
     display:flex;
     align-items: center;
     justify-content: center;
     padding: 100px;
-    font-size: 14px;
 }
+
+.homepage-text {
+    font-size: 14px;
+    position: absolute;
+    z-index: -1;
+}
+

@@ -4,8 +4,7 @@ export function Tabs() {
     
     const [isActive, setIsActive] = useState(false)
     const [selected, setSelected] = useState("eBay")
-    const [activeClass, setActiveClass] = useState(true)
-
+    
     const shops = ["eBay", "Buyee Auction", "Mercari"]
     return (
     <>
@@ -22,7 +21,7 @@ export function Tabs() {
                     setSelected(shop);
                     setIsActive(false);
                 }
-            }>{shop}</li>
+            } className={selected === shop && "active"}>{shop}</li>
         ))}             
         </ul>
         )}        
