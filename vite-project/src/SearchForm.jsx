@@ -1,8 +1,8 @@
 import { useState } from "react";
 import dotenv from "dotenv";
 
-export function SearchForm({callback, tab}) {
-
+export function SearchForm({callback, selected}) {
+    console.log(selected)
     const [search, setSearch] = useState("");
     //replace id and secret with own
     var ebayClientID = import.meta.env.VITE_ebayClientID;
@@ -37,14 +37,10 @@ export function SearchForm({callback, tab}) {
         }).then(res => res.json()).then(data => callback(data.itemSummaries)).catch(err => console.log(err))
     }
     
-    function scrapeMercari(event) {
-      console.log("This is buyee");
-      event.preventDefault();
-    }
 
     return (
     <div className= "search-container">
-        <form className="search-bar" onSubmit={eBayApiCall ? tab === "eBay": scrapeBuyee ? tab ==="Mercari": console.log("Nothing")}>
+        <form className="search-bar" onSubmit={eBayApiCall ? selected === "eBay": console.log("Nothing")}>
             <input type="text" placeholder="Search" className="search-input" value={search} onChange={(e) => setSearch(e.target.value)} />
             <button type="submit" className="search-button"></button>
         </form>

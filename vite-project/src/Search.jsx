@@ -5,16 +5,13 @@ import { useState } from "react"
 
 export function Search() {
   const [results, setResults] = useState("Please Search")
-  
+  const [callBackSelected, setCallBackSelected] = useState()
 
-  function getTab() {
-    
-  }
     return (
     <>
-      <SearchForm callback={setResults} tab={getTab}/>
+      <SearchForm callback={setResults} selected={callBackSelected} />
 
-      <Tabs />
+      <Tabs callBackSelected={setCallBackSelected} />
       <SearchResults results={results} />
     </>
     )
