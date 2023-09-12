@@ -4,14 +4,15 @@ import {SearchResults} from "./SearchResults"
 import { useState } from "react"
 
 export function Search() {
-  const [results, setResults] = useState("Please Search")
-  const [callBackSelected, setCallBackSelected] = useState()
+    const [results, setResults] = useState("Please Search")
+    const [callBackSelected, setCallBackSelected] = useState("")
+
 
     return (
     <>
-      <SearchForm callback={setResults} selected={callBackSelected} />
+      <SearchForm callback={setResults} callBackSelected={callBackSelected} />
 
-      <Tabs callBackSelected={setCallBackSelected} />
+      <Tabs setCallBackSelected={setCallBackSelected} />
       <SearchResults results={results} />
     </>
     )

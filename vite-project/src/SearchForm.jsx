@@ -1,8 +1,8 @@
 import { useState } from "react";
 import dotenv from "dotenv";
 
-export function SearchForm({callback, selected}) {
-    console.log(selected)
+export function SearchForm({callback, callBackSelected}) {
+  
     const [search, setSearch] = useState("");
     //replace id and secret with own
     var ebayClientID = import.meta.env.VITE_ebayClientID;
@@ -12,8 +12,16 @@ export function SearchForm({callback, selected}) {
     var scope = encodeURI('https://api.ebay.com/oauth/api_scope');
     var clientEbayTokenEndPoint = 'https://api.ebay.com/identity/v1/oauth2/token';
     
+    // Check the tab that is selected
+    function checkSelected(event) {
+      if (callBackSelected == "eBay") { 
+        eBayApiCall();
+      }
+      event.preventDefault();
+    }
+  
     // get ebay AccessToken
-    function eBayApiCall(event) {
+    function eBayApiCall() {
       
         const req = fetch(clientEbayTokenEndPoint, {
           method: 'POST',
@@ -24,7 +32,6 @@ export function SearchForm({callback, selected}) {
           body:`grant_type=client_credentials&scope=${scope}`
     
         }).then(res => res.json()).then(data => data.access_token).then(token => makeEbayApiRequest(token)).catch(err => console.log(err));
-        event.preventDefault();
       }
 
     // make Api request
@@ -40,7 +47,7 @@ export function SearchForm({callback, selected}) {
 
     return (
     <div className= "search-container">
-        <form className="search-bar" onSubmit={eBayApiCall ? selected === "eBay": console.log("Nothing")}>
+        <form className="search-bar" onSubmit={checkSelected}>
             <input type="text" placeholder="Search" className="search-input" value={search} onChange={(e) => setSearch(e.target.value)} />
             <button type="submit" className="search-button"></button>
         </form>

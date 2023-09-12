@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react"
 
-export function Tabs({ callBackSelected }) {
+export function Tabs({ setCallBackSelected }) {
     
     const [isActive, setIsActive] = useState(false)
     const [selected, setSelected] = useState("eBay")
     const [symbolClass, setSymbolClass] = useState(false)
     
+    useEffect(() => {
+        setCallBackSelected(selected)
+    }, [selected])
+
     const shops = ["eBay", "Buyee Auction", "Mercari"];
-    callBackSelected(selected);
+
     return (
     <>
     <div className="tab-container">

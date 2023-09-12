@@ -13,7 +13,7 @@ export function SearchResults({results}) {
                     <Item key={result.itemId} title={result.title} price={result.price.value} image={result.image.imageUrl} itemWebUrl={result.itemWebUrl} itemID = {result.itemId}/>
                     
                     ))
-                };
+                }
                   
             </div>
         </div> 
