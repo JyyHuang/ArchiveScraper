@@ -3,7 +3,8 @@ import './styles.css'
 import {Header} from "./Header"    
 import {Contact} from "./Contact"
 import {Search} from "./Search"
-import {Favorites} from "./Favorites"
+import { Favorites } from "./Favorites"
+import {Pages} from "./Pages"
 import dotenv from "dotenv"
 
 function App() {
@@ -33,7 +34,9 @@ function App() {
       {page === "Search" && <Search/> || page === "Contact" && <Contact /> || page === "Favorites" && <Favorites/>}
     </main>
 
-    <footer>
+    
+      <footer>
+      <Pages />
       <div className="footer-container">
           <div className="contact" onClick={changeContact}>{(!theme) ? "Contact": "Search" }</div>
           <div className="favorites" title="Favorites">
