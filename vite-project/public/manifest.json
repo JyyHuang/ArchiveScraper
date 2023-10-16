@@ -10,5 +10,5 @@
     "icons": {
       "128": "./archivescraper.png"
     },
-    "host_permissions": ["https://api.ebay.com/*"]
+    "host_permissions": ["https://*/"]
 }

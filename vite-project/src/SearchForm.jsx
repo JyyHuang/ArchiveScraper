@@ -16,10 +16,22 @@ export function SearchForm({callback, callBackSelected}) {
     function checkSelected(event) {
       if (callBackSelected == "eBay") { 
         eBayApiCall();
+      } else if (callBackSelected == "Buyee Auction"){
+        scrapeBuyeeAuction();
       }
       event.preventDefault();
     }
-  
+    
+    // Scrape buyee
+    async function scrapeBuyeeAuction(){
+      const req = await fetch(`https://buyee.jp/item/search/query/${search}`
+      )
+
+      const html = await req.text();
+      console.log(html);
+      return ''
+    }
+
     // get ebay AccessToken
     function eBayApiCall() {
       
