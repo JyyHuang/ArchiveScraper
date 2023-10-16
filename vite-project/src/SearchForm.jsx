@@ -1,5 +1,6 @@
 import { useState } from "react";
 import dotenv from "dotenv";
+import axios from "axios";
 
 export function SearchForm({callback, callBackSelected}) {
   
@@ -14,7 +15,7 @@ export function SearchForm({callback, callBackSelected}) {
     
     // Check the tab that is selected
     function checkSelected(event) {
-      if (callBackSelected == "eBay") { 
+      if (callBackSelected == "eBay") {
         eBayApiCall();
       } else if (callBackSelected == "Buyee Auction"){
         scrapeBuyeeAuction();
