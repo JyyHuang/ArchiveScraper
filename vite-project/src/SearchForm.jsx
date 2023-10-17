@@ -25,12 +25,8 @@ export function SearchForm({callback, callBackSelected}) {
     
     // Scrape buyee
     async function scrapeBuyeeAuction(){
-      const req = await fetch(`https://buyee.jp/item/search/query/${search}`
-      )
-
+      const req = await fetch(`https://buyee.jp/item/search/query/${search}`);
       const html = await req.text();
-      console.log(html);
-      return ''
     }
 
     // get ebay AccessToken
