@@ -2,7 +2,6 @@
 
 Chrome extensions built using eBay's Browse Api.
 
-Currently, only eBay has been implemented. Buyee Auction and Mercari soon to come!
 
 Extension allows you to search for products in the browser, and favorite products you are interested in to view them later.
 
